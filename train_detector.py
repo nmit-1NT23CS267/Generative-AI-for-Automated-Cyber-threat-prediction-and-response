@@ -47,4 +47,4 @@ for text, pred in zip(X_test[:3], pipeline.predict(X_test[:3])):
 
 # Save model
 joblib.dump(pipeline, 'resume_detector.pkl')
-print("\nModel saved as resume_detector.pkl - FAKE DETECTOR READY!")
+#print("\nModel saved as resume_detector.pkl ")
