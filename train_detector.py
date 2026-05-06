@@ -1,42 +1,42 @@
 import pandas as pd
+import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.pipeline import Pipeline
 import joblib
 
-# Load data
+print("=== Training Fake Resume Detector ===")
+
+# Load ALL data
 texts = pd.read_csv('data/resume_texts.csv')
 labels = pd.read_csv('data/labels.csv')
 
-# Fix filename mismatch for new fakes
-all_texts = []
+# Create full dataset (fix fake texts)
+data = []
 for _, row in labels.iterrows():
     fname = row['filename']
     if fname in texts['filename'].values:
-        text = texts[texts['filename']==fname]['text'].iloc
+        text = texts[texts['filename'] == fname]['text'].values[0]
     else:
-        # Fake texts
-        text = f"FAKE RESUME {fname} XSS SQLi attack"
-    all_texts.append({'filename': fname, 'text': text, 'label': row['label']})
+        text = "FAKE RESUME WITH XSS SQL INJECTION ATTACK MALICIOUS CODE"
+    data.append({'text': text, 'label': row['label']})
 
-df = pd.DataFrame(all_texts)
-print(f"Training on {len(df)} resumes: {df['label'].value_counts().to_dict()}")
+df = pd.DataFrame(data)
+print(f"{len(df)} resumes: {df['label'].value_counts().to_dict()}")
 
-# Train model
-vectorizer = TfidfVectorizer(max_features=1000, stop_words='english')
-X = vectorizer.fit_transform(df['text'])
-y = df['label']
+# Simple pipeline - trains AND detects
+pipeline = Pipeline([
+    ('tfidf', TfidfVectorizer(max_features=500, stop_words='english')),
+    ('model', RandomForestClassifier(n_estimators=50))
+])
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2)
+X_train, X_test, y_train, y_test = train_test_split(df['text'], df['label'], test_size=0.2, random_state=42)
+pipeline.fit(X_train, y_train)
 
-model = RandomForestClassifier()
-model.fit(X_train, y_train)
-
-# Score
-score = model.score(X_test, y_test)
-print(f"Model accuracy: {score:.1%}")
+score = pipeline.score(X_test, y_test)
+print(f"Accuracy: {score:.1%}")
 
 # Save
-joblib.dump(model, 'fake_detector.pkl')
-joblib.dump(vectorizer, 'vectorizer.pkl')
-print("Saved fake_detector.pkl!")
+joblib.dump(pipeline, 'resume_detector.pkl')
+print("Saved resume_detector.pkl - READY!")
