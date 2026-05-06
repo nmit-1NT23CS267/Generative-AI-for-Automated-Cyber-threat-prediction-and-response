@@ -1,6 +1,7 @@
 import joblib
 import fitz
 import sys
+import numpy as np
 
 # Load model
 model = joblib.load('resume_detector.pkl')
