@@ -1,0 +1,7 @@
+Module 1: User activity collection
+Module 2: Resume upload and API logging
+Module 3: Threat detection using rules and ML
+Module 4: Response and dashboard output
+
+Flow:
+User action -> logs -> detection -> threat classification -> response
