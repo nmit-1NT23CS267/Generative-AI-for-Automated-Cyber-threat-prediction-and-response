@@ -1,0 +1,20 @@
+Project flow:
+1. User interacts with job portal.
+2. System collects login, resume, and API logs.
+3. Detection module checks for suspicious patterns.
+4. Threat classifier labels the event.
+5. Response module generates alert or action.
+
+Main modules:
+- Login activity logging
+- Resume activity logging
+- API request monitoring
+- Attack detection
+- Threat response
+
+Threats to detect:
+- SQL Injection
+- Cross-Site Scripting
+- Bot scraping
+- Brute force login
+- Unauthorized access
