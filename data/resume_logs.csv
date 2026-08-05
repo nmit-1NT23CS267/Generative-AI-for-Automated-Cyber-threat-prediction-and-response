@@ -1,0 +1,6 @@
+timestamp,user,email,ip,action,status,details
+2026-08-02 10:00:00,user1,user1@mail.com,192.168.1.10,upload,success,resume uploaded
+2026-08-02 10:02:00,user2,user2@mail.com,192.168.1.11,upload,success,resume uploaded
+2026-08-02 10:05:00,bot1,bot@x.com,9.9.9.9,download,success,multiple resume downloads
+2026-08-02 10:06:00,bot1,bot@x.com,9.9.9.9,download,success,multiple resume downloads
+2026-08-02 10:07:00,bot1,bot@x.com,9.9.9.9,download,success,multiple resume downloads
