@@ -1,0 +1,24 @@
+Login flow:
+- User submits email and password.
+- System checks credentials.
+- System writes login log.
+- System returns success or failure.
+
+Resume upload flow:
+- User uploads resume file.
+- System stores file locally.
+- System writes resume upload log.
+- System returns file name and status.
+
+Logged fields:
+- timestamp
+- user/email
+- IP address
+- action type
+- status
+- file name or details
+
+Suspicious cases:
+- repeated failed login
+- uploading many resumes quickly
+- resume upload from unknown IP
