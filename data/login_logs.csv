@@ -1,0 +1,7 @@
+timestamp,user,email,ip,status,details
+2026-08-02 09:00:00,user1,user1@mail.com,192.168.1.10,success,normal login
+2026-08-02 09:05:00,user2,user2@mail.com,192.168.1.11,success,normal login
+2026-08-02 09:10:00,user3,user3@mail.com,10.0.0.5,failed,wrong password
+2026-08-02 09:11:00,user3,user3@mail.com,10.0.0.5,failed,wrong password
+2026-08-02 09:12:00,user3,user3@mail.com,10.0.0.5,failed,wrong password
+2026-08-02 09:13:00,unknown,unknown@x.com,8.8.8.8,failed,suspicious repeated login
