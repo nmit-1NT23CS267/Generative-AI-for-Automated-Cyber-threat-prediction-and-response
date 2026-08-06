@@ -1,0 +1,12 @@
+NORMAL_LOGIN: user1 logged in successfully
+FAILED_LOGIN: user3 login failed
+BRUTE_FORCE: user3 login failed three times from 10.0.0.5
+SQLI_1: ' OR 1=1 --
+SQLI_2: UNION SELECT username,password FROM users
+SQLI_3: DROP TABLE candidates
+XSS_1: <script>alert(1)</script>
+XSS_2: javascript:alert(1)
+XSS_3: <img src=x onerror=alert(1)>
+BOT_1: bot1 downloaded 20 resumes in one minute
+BOT_2: bot1 sent 50 search requests in one minute
+UNAUTHORIZED_1: unknown user accessed /admin with status 403
