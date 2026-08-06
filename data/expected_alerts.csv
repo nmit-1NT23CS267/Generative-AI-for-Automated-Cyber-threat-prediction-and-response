@@ -1,0 +1,13 @@
+test_name,expected_category,expected_severity
+NORMAL_LOGIN,None,None
+FAILED_LOGIN,None,None
+BRUTE_FORCE,Brute Force,High
+SQLI_1,SQL Injection,Critical
+SQLI_2,SQL Injection,Critical
+SQLI_3,SQL Injection,Critical
+XSS_1,Cross-Site Scripting,High
+XSS_2,Cross-Site Scripting,High
+XSS_3,Cross-Site Scripting,High
+BOT_1,Bot Activity,High
+BOT_2,Bot Activity,High
+UNAUTHORIZED_1,Unauthorized Access,High
