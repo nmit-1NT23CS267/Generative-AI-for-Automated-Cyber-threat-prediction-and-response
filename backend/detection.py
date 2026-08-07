@@ -1,6 +1,8 @@
+import hashlib
 import json
 import re
 from collections import Counter
+from datetime import datetime
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent
@@ -26,20 +28,38 @@ def read_logs():
     return LOG_FILE.read_text(encoding="utf-8").splitlines()
 
 
-def make_alert(category, severity, confidence, reason, response, line):
+def calculate_risk_score(severity):
+    scores = {
+        "Low": 25,
+        "Medium": 50,
+        "High": 75,
+        "Critical": 95
+    }
+    return scores.get(severity, 0)
+
+
+def create_alert(category, severity, confidence, reason, response, log_line):
+    alert_key = f"{category}|{log_line}"
+    alert_id = hashlib.sha256(
+        alert_key.encode("utf-8")
+    ).hexdigest()[:12]
+
     return {
+        "alert_id": alert_id,
+        "timestamp": datetime.now().isoformat(timespec="seconds"),
         "category": category,
         "severity": severity,
+        "risk_score": calculate_risk_score(severity),
         "confidence": confidence,
         "reason": reason,
         "recommended_response": response,
-        "log": line
+        "log": log_line
     }
 
 
 def detect_alerts():
     lines = read_logs()
-    alerts = []
+    raw_alerts = []
 
     failed_logins = Counter()
     download_counts = Counter()
@@ -48,46 +68,53 @@ def detect_alerts():
         lower_line = line.lower()
 
         if "login" in lower_line and "failed" in lower_line:
-            email_or_user = line.split("|")[2].strip()
-            failed_logins[email_or_user] += 1
+            parts = [part.strip() for part in line.split("|")]
+
+            if len(parts) >= 3:
+                user = parts[2]
+                failed_logins[user] += 1
 
         if "download" in lower_line:
             parts = [part.strip() for part in line.split("|")]
+
             if len(parts) >= 3:
-                ip_or_user = parts[2]
-                download_counts[ip_or_user] += 1
+                user_or_ip = parts[2]
+                download_counts[user_or_ip] += 1
 
         if SQLI_PATTERN.search(line):
-            alerts.append(
-                make_alert(
+            raw_alerts.append(
+                create_alert(
                     "SQL Injection",
                     "Critical",
                     0.98,
-                    "Suspicious SQL injection pattern found in input or log.",
-                    "Reject input and use parameterized database queries.",
+                    "A suspicious SQL injection pattern was found.",
+                    "Reject the input and use parameterized database queries.",
                     line
                 )
             )
 
         if XSS_PATTERN.search(line):
-            alerts.append(
-                make_alert(
+            raw_alerts.append(
+                create_alert(
                     "Cross-Site Scripting",
                     "High",
                     0.96,
-                    "Suspicious script or event-handler pattern found.",
-                    "Reject or sanitize input and alert the administrator.",
+                    "A suspicious script or event-handler pattern was found.",
+                    "Reject or sanitize the input and alert the administrator.",
                     line
                 )
             )
 
-        if "/admin" in lower_line and ("403" in lower_line or "unknown" in lower_line):
-            alerts.append(
-                make_alert(
+        if (
+            "/admin" in lower_line
+            and ("403" in lower_line or "unknown" in lower_line)
+        ):
+            raw_alerts.append(
+                create_alert(
                     "Unauthorized Access",
                     "High",
                     0.94,
-                    "Unknown user attempted to access a restricted endpoint.",
+                    "An unknown user attempted to access a restricted endpoint.",
                     "Deny access and temporarily restrict the source.",
                     line
                 )
@@ -95,12 +122,12 @@ def detect_alerts():
 
     for user, count in failed_logins.items():
         if count >= 3:
-            alerts.append(
-                make_alert(
+            raw_alerts.append(
+                create_alert(
                     "Brute Force",
                     "High",
                     0.92,
-                    f"{count} failed login attempts detected for the same user.",
+                    f"{count} failed login attempts were detected.",
                     "Temporarily restrict login and alert the administrator.",
                     user
                 )
@@ -108,16 +135,22 @@ def detect_alerts():
 
     for user_or_ip, count in download_counts.items():
         if count >= 3:
-            alerts.append(
-                make_alert(
+            raw_alerts.append(
+                create_alert(
                     "Bot Activity",
                     "High",
                     0.90,
-                    f"{count} resume downloads detected for the same user or IP.",
+                    f"{count} resume downloads were detected.",
                     "Apply throttling and temporarily restrict access.",
                     user_or_ip
                 )
             )
+
+    unique_alerts = {}
+    for alert in raw_alerts:
+        unique_alerts[alert["alert_id"]] = alert
+
+    alerts = list(unique_alerts.values())
 
     ALERT_FILE.write_text(
         json.dumps(alerts, indent=4),
