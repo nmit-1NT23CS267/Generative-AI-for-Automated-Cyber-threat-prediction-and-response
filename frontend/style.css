@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eef2f7;
+    color: #1f2937;
+}
+
+.header {
+    padding: 28px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(135deg, #153b6b, #2674a8);
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+.header p {
+    margin-bottom: 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 30px auto;
+}
+
+.card {
+    margin: 20px 0;
+    padding: 24px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+    margin-top: 0;
+    color: #153b6b;
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    margin-top: 6px;
+    padding: 11px;
+    border: 1px solid #b8c2cc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+button {
+    margin-top: 18px;
+    margin-right: 8px;
+    padding: 11px 16px;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #2674a8;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    background-color: #153b6b;
+}
+
+.message {
+    min-height: 20px;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.success {
+    color: #167a35;
+}
+
+.error {
+    color: #c62828;
+}
+
+pre {
+    min-height: 120px;
+    margin-top: 20px;
+    padding: 15px;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    border-radius: 5px;
+    background-color: #f1f3f5;
+}
+
+.footer {
+    padding: 20px;
+    text-align: center;
+    color: #6b7280;
+}
