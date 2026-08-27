@@ -1,0 +1,11 @@
+DEMO ACCOUNT 1
+Email: candidate1@example.com
+Password: 123456
+
+DEMO ACCOUNT 2
+Email: candidate2@example.com
+Password: wrong123
+
+DEMO ACCOUNT 3
+Email: bot@example.com
+Password: 123456

@@ -1,0 +1,17 @@
+SAMPLE RESUME
+
+Name: Demo Candidate
+Email: demo.candidate@example.com
+Phone: 9999999999
+
+Education:
+Bachelor of Engineering in Computer Science
+
+Skills:
+Python, Java, SQL, FastAPI, PostgreSQL
+
+Experience:
+This is a dummy resume created only for academic project testing.
+
+Note:
+This file contains no real personal information.
