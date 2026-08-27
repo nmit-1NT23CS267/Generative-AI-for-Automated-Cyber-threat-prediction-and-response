@@ -157,4 +157,37 @@ def detect_alerts():
         encoding="utf-8"
     )
 
+    store_alerts(alerts)
+
     return alerts
+
+
+def store_alerts(alerts):
+    """
+    Stores alerts in PostgreSQL.
+    """
+    try:
+        from database import get_db_connection
+
+        with get_db_connection() as conn:
+            for alert in alerts:
+                conn.execute(
+                    """
+                    INSERT INTO alerts
+                    (alert_id, timestamp, category, severity, risk_score, confidence, reason, recommended_response, log_entry)
+                    VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+                    """,
+                    (
+                        alert.get("alert_id"),
+                        datetime.fromisoformat(alert.get("timestamp")),
+                        alert.get("category"),
+                        alert.get("severity"),
+                        alert.get("risk_score"),
+                        float(alert.get("confidence")),
+                        alert.get("reason"),
+                        alert.get("recommended_response"),
+                        alert.get("log")
+                    )
+                )
+    except Exception as error:
+        print(f"Alert storage error: {error}")
