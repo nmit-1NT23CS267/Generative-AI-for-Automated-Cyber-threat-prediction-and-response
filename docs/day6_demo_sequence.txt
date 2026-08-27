@@ -1,0 +1,11 @@
+1. Open the SecureHire frontend.
+2. Log in using candidate1@example.com and password 123456.
+3. Show the successful login message.
+4. Upload the dummy resume.
+5. Show the successful upload message.
+6. Click View Activity Logs.
+7. Show the login and resume-upload records.
+8. Generate synthetic Day 5 logs if required.
+9. Click Analyze Logs.
+10. Click View Alerts.
+11. Explain the detected threat categories and recommended responses.
