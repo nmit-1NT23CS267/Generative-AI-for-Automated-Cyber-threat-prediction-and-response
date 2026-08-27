@@ -1,23 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Job Portal Security Demo</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureHire Job Portal</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Job Portal Security Demo</h1>
+    <header class="header">
+        <h1>SecureHire</h1>
+        <p>Secure Recruitment and Cyber Threat Monitoring Platform</p>
+    </header>
 
-    <h2>Login</h2>
-    <form>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button type="submit">Login</button>
-    </form>
+    <main class="container">
+        <section class="card">
+            <h2>Candidate Login</h2>
 
-    <h2>Upload Resume</h2>
-    <form>
-        <input type="email" placeholder="Email">
-        <input type="file">
-        <button type="submit">Upload</button>
-    </form>
+            <form id="loginForm">
+                <label for="loginEmail">Email</label>
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="candidate@example.com"
+                    required
+                >
+
+                <label for="loginPassword">Password</label>
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="Enter password"
+                    required
+                >
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p id="loginResult" class="message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Upload Resume</h2>
+
+            <form id="resumeForm">
+                <label for="resumeEmail">Candidate Email</label>
+                <input
+                    id="resumeEmail"
+                    type="email"
+                    placeholder="candidate@example.com"
+                    required
+                >
+
+                <label for="resumeFile">Choose Resume</label>
+                <input
+                    id="resumeFile"
+                    type="file"
+                    accept=".pdf,.doc,.docx"
+                    required
+                >
+
+                <button type="submit">Upload Resume</button>
+            </form>
+
+            <p id="uploadResult" class="message"></p>
+        </section>
+
+        <section class="card">
+            <h2>Security Monitoring</h2>
+
+            <button id="logsButton">View Activity Logs</button>
+            <button id="analyzeButton">Analyze Logs</button>
+            <button id="alertsButton">View Alerts</button>
+
+            <pre id="securityResult">Results will appear here.</pre>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Academic Cybersecurity Project</p>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
