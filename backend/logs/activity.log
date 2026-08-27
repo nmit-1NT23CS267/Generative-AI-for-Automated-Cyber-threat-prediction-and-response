@@ -1,0 +1,88 @@
+2026-08-07 19:30:25 | login | normal_user@mail.com | 192.168.1.10 | success
+2026-08-07 19:30:25 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:30:25 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:30:25 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:30:25 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --
+2026-08-07 19:30:25 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>
+2026-08-07 19:30:25 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:30:25 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:30:25 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:30:25 | api | unknown | 10.10.10.10 | /admin | 403
+2026-08-07 19:33:54 | login | normal_user@mail.com | 192.168.1.10 | success
+2026-08-07 19:33:54 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:33:54 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:33:54 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-07 19:33:54 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --
+2026-08-07 19:33:54 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>
+2026-08-07 19:33:54 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:33:54 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:33:54 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-07 19:33:54 | api | unknown | 10.10.10.10 | /admin | 403
+2026-08-07 19:35:03.428916 | login | string | failed
+2026-08-07T19:45:42 | login | string | 127.0.0.1 | failed
+2026-08-07T19:45:44 | login | string | 127.0.0.1 | failed
+2026-08-08T16:58:48 | login | candidate1@example.com | 127.0.0.1 | success
+2026-08-18T22:31:05 | login | test.user@example.com | 127.0.0.1 | success
+2026-08-18T22:31:08 | login | test.user@example.com | 127.0.0.1 | success
+2026-08-18T22:31:53 | resume_upload | test.user@example.com | 127.0.0.1 | 5eed8dbf2eb1494d8a5a294c66f4bdc6.pdf | success
+2026-08-19 08:41:08 | login | normal_user@mail.com | 192.168.1.10 | success
+2026-08-19 08:41:08 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-19 08:41:08 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-19 08:41:08 | login | brute_user@mail.com | 10.0.0.5 | failed
+2026-08-19 08:41:08 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --
+2026-08-19 08:41:08 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>
+2026-08-19 08:41:08 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-19 08:41:08 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-19 08:41:08 | resume_download | bot_user@mail.com | 9.9.9.9 | success
+2026-08-19 08:41:08 | api | unknown | 10.10.10.10 | /admin | 403
+2026-08-19T22:10:09 | login | user1@example.com | 127.0.0.1 | success
+2026-08-19T22:10:20 | login | user1@example.com | 127.0.0.1 | success
+2026-08-19T22:10:20 | login | user2@example.com | 127.0.0.1 | success
+2026-08-19T22:10:20 | login | user3@example.com | 127.0.0.1 | failed
+2026-08-19T22:10:20 | login | user4@example.com | 127.0.0.1 | success
+2026-08-19T22:10:25 | login | user5@example.com | 127.0.0.1 | failed
+2026-08-19T22:10:52 | login | user6@example.com | 127.0.0.1 | failed
+2026-08-19T22:11:19 | login | Sravanthi@example.com | 127.0.0.1 | success
+2026-08-19T22:11:33 | login | Sravanthi@example.com | 127.0.0.1 | failed
+2026-08-19T22:11:52 | login | Bhumika@example.com | 127.0.0.1 | failed
+2026-08-19T22:12:14 | login | Bhumika@example.com | 127.0.0.1 | success
+2026-08-19T22:12:29 | login | Tanisha@example.com | 127.0.0.1 | success
+2026-08-19T22:12:41 | login | Varsha@example.com | 127.0.0.1 | success
+2026-08-19T22:13:02 | login | Varsha@example.com | 127.0.0.1 | failed
+2026-08-19T22:13:25 | login | Varsha1@example.com | 127.0.0.1 | failed
+2026-08-19T22:13:39 | login | Sravanthi1@example.com | 127.0.0.1 | failed
+2026-08-19T22:13:54 | login | Bhumika1@example.com | 127.0.0.1 | success
+2026-08-19T22:14:07 | login | Tanisha1@example.com | 127.0.0.1 | success
+2026-08-20T22:23:49 | malicious_upload | sravanthi1@example.com | 127.0.0.1 | Campus_SDE1_super.moneyJD .pdf | blocked
+2026-08-20T22:24:18 | resume_upload | sravanthi1@example.com | 127.0.0.1 | 2d8e7acca00d49aeaf75c19508295477.pdf | success
+2026-08-20T22:27:01 | malicious_upload | sravanthi1@example.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-20T23:23:59 | resume_upload | shravanthinpk@gmail.com | 127.0.0.1 | bda723d2a15c49ce961a2802102736e0.pdf | success
+2026-08-21T00:32:51 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:32:57 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:03 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:08 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:13 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:18 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:23 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:27 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:32 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T00:33:37 | malicious_upload | 1nt23cs240.sravanthi@nmit.ac.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:06:52 | malicious_upload | shravanthinpk@gmail.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:06:57 | malicious_upload | shravanthinpk@gmail.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:07:02 | malicious_upload | shravanthinpk@gmail.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:07:15 | resume_upload | shravanthinpk@gmail.com | 127.0.0.1 | ed7bf949c7ac4a53857f3c25abc5a2d0.pdf | success
+2026-08-21T23:15:39 | resume_upload | subbi@123.com | 127.0.0.1 | 5b84bd67567a46b7a14d27850224867f.pdf | success
+2026-08-21T23:26:01 | resume_upload | subbi@123.com | 127.0.0.1 | 3d0c3e08959d4aceafb0c5599f2cee33.pdf | success
+2026-08-21T23:27:40 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:27:45 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:27:50 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-21T23:31:24 | login | string | 127.0.0.1 | failed
+2026-08-22T09:24:08 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-22T09:24:13 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-22T09:24:17 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-22T09:24:21 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-22T09:24:25 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-22T22:13:57 | resume_upload | subbi@123.com | 127.0.0.1 | 76b0fcbefe674f03a9db0d288ed8619f.pdf | success
+2026-08-25T21:22:44 | malicious_upload | subbi@123.in | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-26T11:57:07 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked
+2026-08-26T11:57:25 | malicious_upload | subbi@123.com | 127.0.0.1 | test_malicious.pdf | blocked

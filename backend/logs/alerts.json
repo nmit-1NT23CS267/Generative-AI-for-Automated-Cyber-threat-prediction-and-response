@@ -1,0 +1,134 @@
+[
+    {
+        "alert_id": "d3c88f278545",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "SQL Injection",
+        "severity": "Critical",
+        "risk_score": 95,
+        "confidence": 0.98,
+        "reason": "A suspicious SQL injection pattern was found.",
+        "recommended_response": "Reject the input and use parameterized database queries.",
+        "log": "2026-08-07 19:30:25 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --"
+    },
+    {
+        "alert_id": "571126003a1b",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Cross-Site Scripting",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.96,
+        "reason": "A suspicious script or event-handler pattern was found.",
+        "recommended_response": "Reject or sanitize the input and alert the administrator.",
+        "log": "2026-08-07 19:30:25 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>"
+    },
+    {
+        "alert_id": "d80070f6c101",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Unauthorized Access",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.94,
+        "reason": "An unknown user attempted to access a restricted endpoint.",
+        "recommended_response": "Deny access and temporarily restrict the source.",
+        "log": "2026-08-07 19:30:25 | api | unknown | 10.10.10.10 | /admin | 403"
+    },
+    {
+        "alert_id": "70c36c64478a",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "SQL Injection",
+        "severity": "Critical",
+        "risk_score": 95,
+        "confidence": 0.98,
+        "reason": "A suspicious SQL injection pattern was found.",
+        "recommended_response": "Reject the input and use parameterized database queries.",
+        "log": "2026-08-07 19:33:54 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --"
+    },
+    {
+        "alert_id": "737670284c03",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Cross-Site Scripting",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.96,
+        "reason": "A suspicious script or event-handler pattern was found.",
+        "recommended_response": "Reject or sanitize the input and alert the administrator.",
+        "log": "2026-08-07 19:33:54 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>"
+    },
+    {
+        "alert_id": "ab655e0c3fdb",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Unauthorized Access",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.94,
+        "reason": "An unknown user attempted to access a restricted endpoint.",
+        "recommended_response": "Deny access and temporarily restrict the source.",
+        "log": "2026-08-07 19:33:54 | api | unknown | 10.10.10.10 | /admin | 403"
+    },
+    {
+        "alert_id": "cb189dfa14d1",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "SQL Injection",
+        "severity": "Critical",
+        "risk_score": 95,
+        "confidence": 0.98,
+        "reason": "A suspicious SQL injection pattern was found.",
+        "recommended_response": "Reject the input and use parameterized database queries.",
+        "log": "2026-08-19 08:41:08 | input | test_user@mail.com | 10.0.0.6 | failed | ' OR 1=1 --"
+    },
+    {
+        "alert_id": "8c72200602c9",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Cross-Site Scripting",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.96,
+        "reason": "A suspicious script or event-handler pattern was found.",
+        "recommended_response": "Reject or sanitize the input and alert the administrator.",
+        "log": "2026-08-19 08:41:08 | input | test_user@mail.com | 10.0.0.7 | failed | <script>alert(1)</script>"
+    },
+    {
+        "alert_id": "47854f63cb71",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Unauthorized Access",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.94,
+        "reason": "An unknown user attempted to access a restricted endpoint.",
+        "recommended_response": "Deny access and temporarily restrict the source.",
+        "log": "2026-08-19 08:41:08 | api | unknown | 10.10.10.10 | /admin | 403"
+    },
+    {
+        "alert_id": "20dd9de9024a",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Brute Force",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.92,
+        "reason": "9 failed login attempts were detected.",
+        "recommended_response": "Temporarily restrict login and alert the administrator.",
+        "log": "brute_user@mail.com"
+    },
+    {
+        "alert_id": "4e64a2b5ae56",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Brute Force",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.92,
+        "reason": "3 failed login attempts were detected.",
+        "recommended_response": "Temporarily restrict login and alert the administrator.",
+        "log": "string"
+    },
+    {
+        "alert_id": "37038a29494b",
+        "timestamp": "2026-08-19T08:42:10",
+        "category": "Bot Activity",
+        "severity": "High",
+        "risk_score": 75,
+        "confidence": 0.9,
+        "reason": "9 resume downloads were detected.",
+        "recommended_response": "Apply throttling and temporarily restrict access.",
+        "log": "bot_user@mail.com"
+    }
+]
