@@ -1,0 +1,11 @@
+{% extends 'base.html' %}{% block title %}Admin dashboard | SecureHire{% endblock %}{% block content %}
+<h1>Admin dashboard</h1>
+<div class="alert alert-warning">Admin accounts are predefined only. New user creation is disabled in this demo.</div>
+<div class="row g-3 mb-4">{% for key,value in stats.items() %}<div class="col-6 col-lg-3"><div class="card p-3"><small class="text-muted text-uppercase">{{ key }}</small><strong class="display-6">{{ value }}</strong></div></div>{% endfor %}</div>
+<div class="row g-4"><div class="col-lg-8"><div class="card p-4"><h2 class="h4">Predefined credentials</h2><ul class="list-group">
+<li class="list-group-item"><strong>Admin</strong><br><small>admin@securehire.com / Admin123!</small></li>
+<li class="list-group-item"><strong>Recruiter</strong><br><small>recruiter@securehire.com / Recruiter123!</small></li>
+<li class="list-group-item"><strong>Tester</strong><br><small>tester@securehire.com / Tester123!</small></li>
+</ul></div></div>
+<div class="col-lg-4"><div class="card p-4"><h2 class="h4">Security alerts</h2>{% for alert in alerts %}<div class="border-bottom py-2"><strong>{{ alert.alert_type }}</strong> <span class="badge text-bg-warning">{{ alert.severity }}</span><div class="small text-muted">{{ alert.description }}</div>{% else %}<p class="text-muted">No alerts yet.</p>{% endfor %}</div></div></div>
+<div class="card p-4 mt-4"><h2 class="h4">Activity log</h2>{% for log in logs %}<div class="small border-bottom py-2">{{ log.created_at }} · {{ log.actor.username if log.actor else 'System' }} · {{ log.action }}</div>{% else %}<p class="text-muted">No activity yet.</p>{% endfor %}</div>{% endblock %}
